@@ -212,8 +212,7 @@ public static partial class Utils
         using var client = new HttpClient();
         try
         {
-            client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", "YN49UqIzb6p9");
-            var response = client.GetStringAsync($"https://mail.ngame.vip/api/mail/{login}").Result;
+            // var response = ;
             var jsonMessage = JsonConvert.DeserializeObject<Dictionary<string, string>>(response);
             var bytes = Encoding.UTF8.GetBytes(jsonMessage?["data"] ?? string.Empty);
             using var stream = new MemoryStream(bytes);
